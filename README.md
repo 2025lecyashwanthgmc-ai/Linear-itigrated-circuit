@@ -99,6 +99,41 @@ The transistor is confirmed to be in the **Saturation Region** because:
 ### Transient Analysis
 A 10mV, 1kHz sine wave was applied. The output shows a peak-to-peak swing of ~50mV, confirming a gain of 5.
 
+Working Principle
+
+The small AC signal applied at the gate causes variations in drain current.
+These current variations produce amplified voltage variations across the drain resistor, resulting in an amplified output signal at the drain terminal.
+
+Expected Output Behavior
+
+Output signal is amplified relative to input.
+
+Output waveform is inverted (180° phase shift).
+
+Signal shape remains sinusoidal in the linear region.
+
+Excessive input amplitude causes clipping and distortion.
+
+Voltage Gain from Transient Response
+
+Voltage gain can be measured directly from waveform amplitudes:
+
+Av = Vout / Vin
+
+Linear vs Non-Linear Operation
+
+Linear Region:
+
+Output waveform is undistorted.
+
+Gain remains constant.
+
+Non-Linear Region:
+
+Occurs when input amplitude is too large.
+
+Output shows clipping due to cutoff or triode operation.
+![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/transient.jpeg?raw=true)
 
 ### AC Analysis (Frequency Response)
 * **Midband Gain:** 14 dB
