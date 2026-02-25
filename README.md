@@ -179,5 +179,14 @@ Bandwidth indicates the range of frequencies over which the amplifier operates e
 ## AC ANALYSIS SIMULATION :
 
 ![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/AC%20analysis.jpeg?raw=true)
+
+## AC ANALYSIS WITH CAPACITOR :
+![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/WITH%20C.jpeg?raw=true)
+
+ ## AC ANALYSIS SIMULATION WITH CAPACITOR  :
+
+![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/ac%20with%20c.jpeg?raw=true)
+
+
 ## 5. Conclusion
 The CS amplifier was successfully modeled. By accurately biasing the NMOS in saturation and selecting an appropriate $R_D$, we achieved the target gain while staying well within the $0.4\text{mW}$ power budget.
