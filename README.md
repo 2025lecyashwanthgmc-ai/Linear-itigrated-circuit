@@ -21,7 +21,7 @@ The design is governed by the following parameters to ensure operation within th
 
 | Parameter | Symbol | Value |
 | :--- | :--- | :--- |
-| Supply Voltage | $V_{DD}$ | 1.2 V |
+| Supply Voltage | $V_{DD}$ | 1.2V |
 | Max Power Limit | $P$ | $\le 0.4$ mW |
 | Load Capacitance | $C_L$ | 0.5 pF |
 | Channel Length | $L$ | 180 nm |
@@ -34,10 +34,6 @@ The design is governed by the following parameters to ensure operation within th
 ## CIRCUIT DIAGRAM :
 
 ![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/circuit.jpeg?raw=true)
-
----
-
- 
 ---
 
 ---
@@ -56,9 +52,9 @@ Therefore, the Q-point is fixed such that VDS ≈ VDD/2 to allow maximum symmetr
 1. The 180nm NMOS model file (tsmc018.lib) was included in LTspice using the .include directive.
 
 2. The Common Source amplifier circuit was constructed with:
-   - VDD = 1.5 V  
-   - Drain resistor RD ≈ 2.245 kΩ  
-   - NMOS transistor with L = 180 nm and W = 2.5 µm    
+   - VDD = 1.2 V  
+   - Drain resistor RD ≈ 1.8 kΩ  
+   - NMOS transistor with L = 180 nm and W = 1.07 µm    
 
 3. DC analysis was performed using the .op and .dc commands to determine the Q-point by setting VDS ≈ VDD/2.
 
@@ -76,8 +72,8 @@ $$V_{DS} = \frac{V_{DD}}{2} = 0.6 \text{ V}$$
 ![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/Qpoint.jpeg?raw=true)
 ### B. Drain Current Calculation
 Using the power constraint $P = V_{DD} \times I_D$:
-$$I_D = \frac{0.4 \text{ mW}}{1.2 \text{ V}} = 0.333 \text{ mA}$$
-*Selected Design Value:* **$I_D = 0.3 \text{ mA}$** (to provide a 10% safety margin).
+$$I_D = \frac{0.4 \text{ mW}}{1.2 \text{ V}} = 0.2 \text{ mA}$$
+*Selected Design Value:* **$I_D = 0.2 \text{ mA}$** (to provide a 10% safety margin).
 
 ### C. Drain Resistor ($R_D$) Selection
 $$R_D = \frac{V_{DD} - V_{DS}}{I_D} = \frac{1.2 - 0.6}{0.3 \text{ mA}} = 2 \text{ k}\Omega$$
@@ -93,8 +89,7 @@ Based on simulation, for a $V_{GS} = 0.6\text{V}$, the expected gain is $\approx
 
 ### DC Analysis (Operating Point)
 The transistor is confirmed to be in the **Saturation Region** because:
-* $V_{GS} (0.6V) > V_{th} (0.366V)$
-* $V_{DS} (0.6V) > V_{GS} - V_{th} (0.234V)$
+* $V_{GS} (0.9V) > V_{th} (0.366V)$
 
 ### Transient Analysis
 A 10mV, 1kHz sine wave was applied. The output shows a peak-to-peak swing of ~50mV, confirming a gain of 5.
@@ -136,7 +131,7 @@ Output shows clipping due to cutoff or triode operation.
 ![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/transient.jpeg?raw=true)
 
 ### AC Analysis (Frequency Response)
-* **Midband Gain:** 14 dB
+* **Midband Gain:** 6.9 dB
 * **Bandwidth:** The high-frequency cutoff ($f_H$) is influenced by $C_L$.
 * **Pole Frequency:** $f_p = \frac{1}{2\pi R_D C_L} \approx 159 \text{ MHz}$.
 The input source AC magnitude was set to 1 V to directly obtain gain in V/V (or dB).
