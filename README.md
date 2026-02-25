@@ -31,10 +31,95 @@ The design is governed by the following parameters to ensure operation within th
 
 ## 3. Theoretical Derivations & Design Steps
 
+## CIRCUIT DIAGRAM :
+
+![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/circuit.jpeg?raw=true)
+
+accessibility. You can choose to enable a more compact line height from the view settings menu.
+
+‎README.md‎
++1
+-1
+Lines changed: 1 addition & 1 deletion
+
+
+Original file line number	Diff line number	Diff line change
+@@ -1,88 +1,88 @@
+S# Experiment – 1  
+# Experiment – 1  
+## DC, Transient and AC Analysis of Common Source Amplifier using 180nm NMOS in LTspice
+
+---
+
+## AIM :
+
+To design a Common Source (CS) amplifier using 180nm NMOS technology in LTspice and to perform DC, Transient and AC analysis as per the given specifications.
+
+---
+
+## GIVEN SPECIFICATIONS :
+
+- VDD = 1.5 V  
+- Power constraint P ≤ 0.5 mW  
+- Load capacitor CL = 1 pF  
+- Channel length L = 180 nm  
+- Technology : 180 nm TSMC library  
+
+---
+
+## COMPONENTS USED :
+
+- NMOS transistor (180nm model)  
+- Drain resistor (RD)  
+- DC power supply  
+- AC signal source  
+- Load capacitor (1 pF)  
+- Ground and connecting wires  
+---
+
+## CIRCUIT DIAGRAM :
+
+The Common Source amplifier circuit was designed in LTspice using 180nm NMOS technology.  
+The drain resistor RD is connected between VDD and drain terminal.  
+The input signal is applied at the gate terminal and output is taken from the drain.  
+
+
+![CS Amplifier Circuit](circuit.png)
+
+---
+
+## THEORY :
+
+A Common Source (CS) amplifier is one of the fundamental MOSFET amplifier configurations.  
+In this configuration, the source terminal is grounded, the input is applied at the gate and the output is taken from the drain.
+The amplifier provides voltage gain with a phase inversion of 180 degrees between input and output.  
+For proper amplification, the MOSFET must operate in the saturation region.  
+Therefore, the Q-point is fixed such that VDS ≈ VDD/2 to allow maximum symmetrical output swing.
+
+
+## PROCEDURE :
+
+1. The 180nm NMOS model file (tsmc018.lib) was included in LTspice using the .include directive.
+
+2. The Common Source amplifier circuit was constructed with:
+   - VDD = 1.5 V  
+   - Drain resistor RD ≈ 2.245 kΩ  
+   - NMOS transistor with L = 180 nm and W = 2.5 µm    
+
+3. DC analysis was performed using the .op and .dc commands to determine the Q-point by setting VDS ≈ VDD/2.
+
+4. RD was adjusted and W/L ratio was varied to achieve the required drain current under the power constraint (P ≤ 0.5 mW).
+
+5. Transient analysis (.tran 5m) was carried out using a sine input SINE(0.9 10m 1k) to observe linear and non-linear behavior.
+
+6. AC analysis (.ac dec 10 0.1 100G) was performed to obtain frequency response and determine gain and bandwidth parameters.
+
 ### A. DC Operating Point (Q-Point)
 To maximize the output signal swing, we target a quiescent drain voltage ($V_{DS}$) at half of the supply voltage:
 $$V_{DS} = \frac{V_{DD}}{2} = 0.6 \text{ V}$$
 
+
+![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/Qpoint.jpeg?raw=true)
 ### B. Drain Current Calculation
 Using the power constraint $P = V_{DD} \times I_D$:
 $$I_D = \frac{0.4 \text{ mW}}{1.2 \text{ V}} = 0.333 \text{ mA}$$
