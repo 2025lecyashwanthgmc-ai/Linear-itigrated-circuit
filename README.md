@@ -108,17 +108,42 @@ controlling the output voltage swing
 determining the voltage gain
 A properly chosen RD ensures sufficient voltage drop while maintaining the transistor in saturation.
 
+ 
 ### D. Small-Signal Voltage Gain ($A_v$)
+
+## W CALCULATION :
+
 The gain is defined by the transconductance ($g_m$):
 $$A_v = -g_m \times R_D$$
 Based on simulation, for a $V_{GS} = 0.6\text{V}$, the expected gain is $\approx 5 \text{ V/V}$ (14 dB).
 
- Small-Signal Voltage Gain
-The voltage gain of a CS amplifier depends on the transconductance (gm) of the MOSFET and the drain resistance.
-An increase in transconductance or drain resistance increases gain.
-The negative gain sign indicates a 180° phase shift between input and output.
-Gain is also influenced by device parameters, bias point, and load conditions.
 
+Using MOSFET saturation equation:
+
+ID = (kn'/2) × (W/L) × (VGS − Vth)²  
+
+Given:
+
+VGS = 0.9 V  
+Vth = 0.366 V  
+
+(VGS − Vth) = 0.534 V  
+
+L = 180 nm = 180 × 10⁻⁹ m  
+
+Substituting:
+
+2.00 × 10⁻⁴ = (2.30 × 10⁻⁴ / 2) × (W / 180 × 10⁻⁹) × (0.534)²  
+
+Solving,
+
+W ≈ 1.07 µm  
+
+After simulation tuning to obtain accurate Q-point:
+
+Final selected width:
+
+W = 1.5 µm
 
 ---
 
