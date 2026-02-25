@@ -35,17 +35,6 @@ The design is governed by the following parameters to ensure operation within th
 
 ![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/circuit.jpeg?raw=true)
 
-accessibility. You can choose to enable a more compact line height from the view settings menu.
-
-‎README.md‎
-+1
--1
-Lines changed: 1 addition & 1 deletion
-
-
-Original file line number	Diff line number	Diff line change
-@@ -1,88 +1,88 @@
-
 ---
 
  
@@ -115,9 +104,45 @@ A 10mV, 1kHz sine wave was applied. The output shows a peak-to-peak swing of ~50
 * **Midband Gain:** 14 dB
 * **Bandwidth:** The high-frequency cutoff ($f_H$) is influenced by $C_L$.
 * **Pole Frequency:** $f_p = \frac{1}{2\pi R_D C_L} \approx 159 \text{ MHz}$.
+The input source AC magnitude was set to 1 V to directly obtain gain in V/V (or dB).
 
+Voltage Gain
+
+The small-signal voltage gain of a CS amplifier is approximately:
+​
+
+gm = transconductance of the MOSFET
+RD = drain resistance
+
+The negative sign indicates 180° phase inversion between input and output.
+
+ - Frequency Response
+
+The gain response of the amplifier consists of three regions:
+
+- 1. Low-Frequency Region
+Gain decreases due to coupling and bypass capacitors.
+
+- 2. Midband Region
+Gain remains constant and maximum.
+This is the normal operating region of the amplifier.
+
+- 3. High-Frequency Region
+Gain decreases due to MOSFET parasitic capacitances (Cgs, Cgd, Cdb).
+
+Cutoff Frequencies
+
+- Lower cutoff frequency: fL (gain drops by 3 dB)
+
+- Upper cutoff frequency: fH (gain drops by 3 dB)
+
+Bandwidth​
+
+Bandwidth indicates the range of frequencies over which the amplifier operates effectively.
 
 ---
+## AC ANALYSIS SIMULATION :
 
+![Image description](https://github.com/2025lecyashwanthgmc-ai/Linear-itigrated-circuit/blob/main/AC%20analysis.jpeg?raw=true)
 ## 5. Conclusion
 The CS amplifier was successfully modeled. By accurately biasing the NMOS in saturation and selecting an appropriate $R_D$, we achieved the target gain while staying well within the $0.4\text{mW}$ power budget.
