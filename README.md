@@ -144,7 +144,6 @@ After simulation tuning to obtain accurate Q-point:
 Final selected width:
 
 W = 1.5 µm
-
 ---
 
 ## 4. Simulation Results
